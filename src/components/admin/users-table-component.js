@@ -1,6 +1,6 @@
 
 export default
-function UserTable({users, selectUser}) {
+function UserTable({users, selectUser, markForRemoval}) {
 return(<>
 <p>Total number of employees: {users.length} </p>
 <table>
@@ -17,7 +17,7 @@ return(<>
 { 
 users.map((user) => (
 	<tr key={user.id} >
-		<TableDataRow user={user} selectUser={selectUser}/>
+		<TableDataRow user={user} selectUser={selectUser}markForRemoval={markForRemoval} />
 	</tr>
 ))
 }
@@ -26,8 +26,7 @@ users.map((user) => (
 </>);
 }
 
-function TableDataRow({user, selectUser}) {
-
+function TableDataRow({user, selectUser, markForRemoval}) {
 return(<>
 <td>{user.id}</td>
 <th>{user.username}</th>
@@ -36,7 +35,7 @@ return(<>
 <button type="button"  onClick={() => selectUser(user.id)} >Details</button>
 </td>
 <td>
-<button type="button"  onClick={() => selectUser(user.id)} >Remove</button>
+<button type="button"  onClick={() => {selectUser(user.id); markForRemoval(true);}} >Remove</button>
 </td>
 </>);
 }

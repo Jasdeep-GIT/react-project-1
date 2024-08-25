@@ -1,19 +1,24 @@
 import ConfirmationDialog from '../confirmation-dialog';
 
 export default
-function RemoveUser({user, updateEditing}) {
-const message = `Are you sure you want to permanently delete user.name} with username ${user.username}?`
+function RemoveUser({user, selectUser, updateRemoved, updateEditing}) {
+const message = `Are you sure you want to permanently delete user.name} with username ${user.username}?`;
 const handleConfirm = () => {
 	updateRemoved(true);
+	selectUser(-1);
 };
 const handleCancel = () => {
-	// do nothing
+	updateRemoved(false);
 };
 const handleEdit = () => {
 	updateEditing(true);
+	updateRemoved(false);
 };
 
+console.log(message);
 return(<>
-<ConfirmationDialog message={message} />
+<div className="RemoveUser-overlay">
+<ConfirmationDialog message={message} handleConfirm={handleConfirm} handleCancel={handleCancel} updateEditing={updateEditing} />
+</div>
 </>);
 }

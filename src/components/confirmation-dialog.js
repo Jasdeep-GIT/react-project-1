@@ -3,7 +3,7 @@ import '../css/confirmation-dialog.css';
 export default
 function ConfirmationDialog({message, handleConfirm, handleCancel, updateEditing}) {
 return(<>
-<div className="ConfirmationDialog"
+<div className="ConfirmationDialog">
 <p>{message}</p>
 <div className="ConfirmationDialog-buttons">
 <button type="button" onClick={handleConfirm} >Yes</button>

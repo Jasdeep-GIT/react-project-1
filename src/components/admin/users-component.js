@@ -2,6 +2,7 @@ import '../../css/users-component.css';
 import UsersTable from './users-table-component';
 import ViewUser from '../user/view-user-component';
 import EditUser from '../user/edit-user-component';
+import RemoveUser from './remove-user-component';
 
 import {useState, useEffect} from 'react';
 
@@ -15,15 +16,23 @@ const [error, setError] = useState(null);
 const [isLoading, setLoading] = useState(false);
 const [isEditing, setEditing] = useState(false);
 const [isModified, setModified] = useState(false);
+const [forRemoval, setForRemoval] = useState(false);
+const [isRemoved, setRemoved] = useState(false);
 
 const selectUser = (id) => { setUserId(id); };
 const updateEditing = (value) => { setEditing(value) };
 const updateModified = (value) => { setModified(value); };
+const markForRemoval = (value) => { setForRemoval(value); };
+const updateRemoved = (value) => { 
+	//updateRemoved(value);
+	markForRemoval(false);
+};
 
 useEffect(() => {
 setLoading(true);
 if (userId === -1) {
 setUsers([]);
+setEditing(false);
 fetch(`https://jsonplaceholder.typicode.com/users`)
 	.then((response) => {
 	if (!response.ok) throw new Error(`Couldn't retrieve data`);
@@ -70,11 +79,13 @@ return(<>
 
 return(<>
 { (userId === -1) ? 
-	<UsersTable users={users} selectUser={selectUser} /> : 
+	<UsersTable users={users} selectUser={selectUser} markForRemoval={markForRemoval} /> : 
 	( isEditing ?
 		<EditUser user={user} hasAdminRights={hasAdminRights} selectUser={selectUser} updateEditing={updateEditing} updateModified={updateModified} /> : 
-		<ViewUser user={user} isModified={isModified} hasAdminRights={hasAdminRights} selectUser={selectUser} updateEditing={updateEditing} />  
-	)
+		(forRemoval ?
+			<RemoveUser user={user} selectUser={selectUser} updateRemoved={updateRemoved} updateEditing={updateEditing} /> :
+			<ViewUser user={user} isModified={isModified} hasAdminRights={hasAdminRights} selectUser={selectUser} updateEditing={updateEditing} />  
+)	)
 }
 </>);
 }
