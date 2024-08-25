@@ -1,0 +1,11 @@
+ManageUsers-flex {
+	display:flex;
+}
+ManageUsers-table {
+	flex:50%;
+	margin: 5px;
+}
+ManageUsers-view {
+	flex: 50%;
+	margin: 5px;
+}

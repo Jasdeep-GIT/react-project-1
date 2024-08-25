@@ -1,0 +1,35 @@
+.Header {
+	background-color: #ECC5C0;
+}
+.Header-flex {
+	display: flex;
+}
+.Header-image {
+	flex: 20%;
+}
+.Header-company-name {
+	flex: 50%;
+	font-size: 40pt;
+	font-weight: bold;
+	text-align: center;
+	margin: 5px;
+}
+.Header-navigation {
+	flex: 40%;
+}
+.Header-site-menu {
+	margin-left: auto;
+}
+.Header-logo {
+	height: 150px;
+	width: 150px;
+}
+.Header-links-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.Header-links-list li {
+	display: inline-block;
+	margin: 10px;
+}

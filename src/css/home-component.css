@@ -1,0 +1,13 @@
+.Home-flex {
+	display: flex;
+}
+.Home-heading {
+	flex: 80%;
+}
+.Home-image {
+	flex: 20%;
+}
+.Home-image img {
+	height: 150px;
+	width: 150px;
+}
