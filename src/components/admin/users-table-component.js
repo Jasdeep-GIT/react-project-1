@@ -1,6 +1,12 @@
 
 export default
 function UserTable({users, selectUser, markForRemoval}) {
+if (!users.length) {
+return(<>
+<p>No employees have been added to the portal.</p>
+</>);
+}
+
 return(<>
 <p>Total number of employees: {users.length} </p>
 <table>

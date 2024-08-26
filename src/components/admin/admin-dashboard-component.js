@@ -5,7 +5,6 @@ import ManageUsers from './users-component';
 
 export default 
 function AdminDashboard({updateAdminLoggedIn}) {
-
 return(<>
 <h1>Admin dashboard</h1>
 <div>

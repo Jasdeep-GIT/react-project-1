@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# react-project-1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my first project in React, an Employee Management System that provides a platform for managing employee details and performing administrative operations. The application features multiple pages with different functionalities, including user authentication, employee management, and department management.
 
-## Available Scripts
+Project Description
+The Employee Management System is built using React and is designed to handle various administrative tasks such as adding, editing,  and removing employees. 
+For testing purposes, the JSONPlaceholder API is used to simulate data.
 
-In the project directory, you can run:
+Project Structure
+Pages and Functionalities
+Home Page (/)
+Displays information about the company (mission, vision, services).
+Includes navigation links to other pages (Login, Dashboard, Admin).
+Company logo is displayed.
 
-### `npm start`
+Login Page (/login)
+Provides a login form with username and password fields.
+Includes a submit button for authentication.
+Displays error messages for incorrect login attempts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dashboard Page (/dashboard)
+Displays user-related information such as username, name, phone, email, and address.
+Includes an option to edit the user details.
+Includes a logout button to end the session.
+Restricted to authenticated users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Admin Login Page (/admin-login)
+Provides a login form for admin users.
+Includes a submit button for authentication.
+Displays error messages for incorrect login attempts.
 
-### `npm test`
+Admin Dashboard Page (/admin/dashboard)
+Offers various admin functionalities including:
+View a list of employees
+Add a new employee
+Edit employee details
+Remove an employee
+Includes a logout button for admin users.
+Restricted to authenticated admin users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Header and Footer
+Header:
+Displays the company logo.
+Quick links for navigation (Home, Login, Dashboard, Admin).
+Footer:
+Includes copyright information.
+Additional links: Contact Us, Privacy Policy, Terms of Service.
 
-### `npm run build`
+Testing with JSONPlaceholder API
+The JSONPlaceholder API is used for testing purposes to simulate user and employee data.
+Endpoints Used:
+Users: https://jsonplaceholder.typicode.com/users
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Setup Instructions
+Clone the repository:
+git clone https://github.com/Jasdeep-GIT/react-project-1.git
+Navigate to the project directory:
+cd react-project-1
+Install dependencies:
+npm install
+Start the development server:
+npm start

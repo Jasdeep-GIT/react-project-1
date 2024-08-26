@@ -1,5 +1,6 @@
 import '../../css/users-component.css';
 import UsersTable from './users-table-component';
+import ShowUsers from './show-users-component';
 import ViewUser from '../user/view-user-component';
 import EditUser from '../user/edit-user-component';
 import RemoveUser from './remove-user-component';
@@ -79,7 +80,7 @@ return(<>
 
 return(<>
 { (userId === -1) ? 
-	<UsersTable users={users} selectUser={selectUser} markForRemoval={markForRemoval} /> : 
+	<ShowUsers users={users} hasAdminRights={hasAdminRights} selectUser={selectUser} markForRemoval={markForRemoval} /> : 
 	( isEditing ?
 		<EditUser user={user} hasAdminRights={hasAdminRights} selectUser={selectUser} updateEditing={updateEditing} updateModified={updateModified} /> : 
 		(forRemoval ?

@@ -46,7 +46,7 @@ return;
 };
 
 return(<>
-<h1>User Login</h1>
+<h1>Employee Login</h1>
 {errorMessage && <p>{errorMessage} </p>}
 <form onSubmit={handleSubmit} >
 <label htmlFor="user-name" >UserName: </label>
